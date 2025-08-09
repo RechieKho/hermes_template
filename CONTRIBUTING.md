@@ -35,7 +35,6 @@ Table A.B.1: Crucial files and its description.
 | ----- | ----- |
 | `/CONTRIBUTEING.md` | The file that you are currently viewing. It holds all the conventions to be abided during contributing. |
 | `/README.md` | The main description of the game project. It should contains an overview for game mechanics and design. |
-| `/externals/content.hn` | A content idea library file viewed through ["Huanian Game Meta Designer"](https://rechie.itch.io/huanian-game-meta-designer) |
 
 ### A.C. Coding Convention
 
@@ -215,65 +214,3 @@ func no_early_return() -> void:
     if not is_some_bad_case():
         pass # Do something.
 ```
-
-## B. Workflow
-
-It would be beneficial to have a well-defined workflow in which contributors are able to follow.
-This could ease collaboration as contributors' behaviour can be anticipated.
-The workflow consists of 3 stages, idea proposal, idea testing, and finally idea integration.
-All of them utilizes Github issues and PR to achieve coordination and documentation.
-
-### B.A. Proposal
-
-This section discusses the process of proposal of game idea.
-Proposal is where the creativity flourish as the creative ideas being structured and recorded.
-The idea are all stored and maintained in `/externals/content.hn` (see [Crucial Files](#ab-crucial-files) section).
-
-It starts with creating a Github issue.
-In the Github issue, state the game idea, a challenge in a level and its corresponding required capabilities.
-The game idea should be relevant to the given game mechanics.
-It is optional but encouraged to add visuals to facilitate idea sharing.
-Please read on the [Game Idea Philosophy](#ca-game-idea-philosophy) section when brainstorming an idea.
-Please be open-minded during the proposal as often time the reviewer will give feedbacks.
-Please do not get discouraged if the idea is not accepted, sometime it is not because the idea bad, but due to financial and time constraint.
-When the idea is accepted, you could create a Github PR to add the idea into the content idea library (`/externals/content.hn`).
-
-### B.B. Testing
-
-This section discusses the process of testing of game idea.
-Testing is a stage in which the challenge ideas proposed are tested via prototyping.
-It is a way to do documentation for technical stuffs as the testing files are used as libraries and examples,
-and test out the interaction between the challenge and required capabilities.
-
-For creating a test for challenge idea, it starts with proposing through creating a Github issue.
-In the Github issue, state the game idea, the challenge, that you want to test.
-When the proposal is accepted, create a PR that includes all the commit for creating the test.
-Create a folder in `/tests` directory (see [Directory Convention](#aa-directory-convention)) with the name relevant to the challenge, then put all the files pertains to the challenge under it.
-For challenges in which the required capabilities are yet to be implemented, it could be implemented together with the challenge.
-The rationale comes from the fact that to test the capability, you need a challenge to test it.
-However, the capabilities would be shared across multiple challenges, and thus not bounded to the `/tests` directory.
-Usually, it will utilise `/assets`, `/autoloads`, `/scripts`, and `/prefabs` directory (see [Directory Convention](#aa-directory-convention)).
-The result of a successful PR should have a working, isolated scene that demonstrate the challenge and its required capabilities.
-
-### B.C. Integration
-
-This section discusses the process of integrating the challenges into the game.
-This is a big move as the result from this stage would probably delivered to the main game.
-At this stage, creativity and resourcefulness must be present as it is the time to create a level.
-
-It starts with creating a Github issue.
-In the Github issue, states the overall level design to be implemented.
-It should include the tested challenges to be utilized and how it is presented to the player.
-When the proposal is accepted, create a PR for it and start the level creation.
-Create a folder in `/scenes` directory (see [Directory Convention](#aa-directory-convention)) with the name relevant to the level, then put all the files pertains to the level under it.
-The result of a successful PR should be playable and accessible level in the main game loop.
-
-## C. Appendix
-
-### C.A. Game Idea Philosophy
-
-Oftentimes, in the process of developing a game, creating content, or making a level is the greatest obstacle, as it dictates the value of each mechanic that you have implemented so far. In so many occurrences, game developers tend to design and implement features head first before thinking about how they will play out in the gameplay that is experienced by the player. This is discouraging when the game features are actually not as useful and fun as it seems when the demo level is created. Sometimes the game feature itself is to blame, but most of the time, the demo level is probably not designed to emphasize the use case of the aforementioned features. When we plan game features in advance of game level, it feels like making a solution without a problem. In the end, the game features, or the capability that is given to the player, are just tools to overcome the puzzle; the puzzle itself is the entity that made up a game. Although the capabilities are important to solve a puzzle, without a puzzle, the capabilities are meaningless.
-
-Designing levels are putting different variations of locks and keys together. Locks in this context are any form of obstacles while keys are any form of solution that overcomes the obstacles. To make the level fun, there must be optimal exposure of discovery of variations of locks and keys. Too much exposure to discovery will cause overwhelm. Imagine when you are just given a big dictionary of foreign language and you are tasked to write a Shakespeare level scripture. You definitely will be overwhelmed; you just don’t know what to do and where to start. Too little exposure to discovery will cause boredom. Now, write your name 100 times (Don’t! Just imagine the task would be enough). There are no new things to discover, just the same stroke again and again. Boring! So, good levels are levels that introduce new problems and corresponding solutions with good pacing.
-
-Do note that fun doesn’t necessarily have locks and keys, just that locks and keys are a really good place to start for making a level. Fun at its core is discovery. This is why discovery and variation are emphasized. You need more variation to have more discovery, which is fun. There is always fun in variations of art and music. However, the fun in pure art and music in game is fleeting; visuals and audios are just super fast to be consumed and achieve complete discovery. We don’t want fleeting fun as it soon becomes boring. So, these are usually auxiliary, such as beautiful background, cool ambient noise, and NPC communication. It is good to have them, but at a requirement that the basis of level design is completed.
