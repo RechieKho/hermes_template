@@ -1,0 +1,7 @@
+{
+&"CapabilitiesPage.capabilities": Dictionary[int, Resource("res://scenes/app/capability.gd")]({}),
+&"ChallengesPage.challenges": Dictionary[int, Resource("res://scenes/app/challenge.gd")]({}),
+&"HomePage.capabilities": "",
+&"HomePage.challenges": "",
+&"HomePage.title": "The Orange Template"
+}

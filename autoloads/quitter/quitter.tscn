@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1ixdkod5bxb5"]
+
+[ext_resource type="Script" uid="uid://bs2x6viyon1ia" path="res://autoloads/quitter/quitter.gd" id="1_agncl"]
+
+[node name="Quitter" type="Node"]
+script = ExtResource("1_agncl")
